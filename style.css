@@ -1,0 +1,51 @@
+body{
+    background-color: #0C1027;
+}
+
+.navBar{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 15%;
+}
+
+.search i{
+    position: absolute;
+    top:2px;
+    left:190%;
+    color: black;
+}
+
+.icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-image: linear-gradient(90deg,#4C31B5,#AA5FCF);
+}
+.card{
+    margin: 10px;
+    width: 22%;
+    height: 30%;
+    background-color: cornflowerblue;
+}
+@keyframes song_name {
+    from{margin-left:60%; }
+    to{margin-left: 1%;}
+}
+.card strong{
+    animation:song_name 8s ease-in-out infinite;
+}
+.card img{
+    margin: 5%;
+}
+
+.like-btn{
+    position: absolute;
+    top:95%;
+    left:85%
+}
+.like-btn:hover{
+    cursor: pointer;
+}
+
+
