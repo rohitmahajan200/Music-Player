@@ -1,12 +1,13 @@
 body{
     background-color: #0C1027;
+    color: white;
 }
 
 .navBar{
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    gap: 15%;
+    gap: 8%;
 }
 
 .search i{
@@ -24,12 +25,13 @@ body{
 }
 .card{
     margin: 10px;
-    width: 22%;
+    width: 29%;
     height: 30%;
     background-color: cornflowerblue;
+    border-radius: 1%;
 }
 @keyframes song_name {
-    from{margin-left:60%; }
+    from{margin-left:60%;}
     to{margin-left: 1%;}
 }
 .card strong{
@@ -46,6 +48,11 @@ body{
 }
 .like-btn:hover{
     cursor: pointer;
+}
+.options:hover{
+    cursor: pointer;
+    background-color: #4C31B5;
+    
 }
 
 
