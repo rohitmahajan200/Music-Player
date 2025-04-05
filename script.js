@@ -98,36 +98,91 @@ allSongs.forEach((item, index) => {
 }
 
 //for fav page
-for (const key in localStorage) {
-  if(typeof localStorage[key] != "function"){
-
-    const container=document.createElement('li');
-    container.classList.add("fav-card");
+if(localStorage.length >0){
+  for (const key in localStorage) {
+    if(typeof localStorage[key] != "function"){
   
-    const img=document.createElement('img');
-    img.src=allSongs[key].image
-    img.classList.add("fav-img");
-  
-    const name=document.createElement('span');
-    name.appendChild(document.createTextNode(`Name-${allSongs[key].name}__`));
-  
-    const info=document.createElement('span');
-    info.appendChild(document.createTextNode(`Artist-${allSongs[key].info.singer}__`));
-    info.appendChild(document.createTextNode(`Album-${allSongs[key].info.album}__`));
-    info.appendChild(document.createTextNode(`Year-${allSongs[key].info.year}`));
+      const container=document.createElement('li');
+      container.classList.add("fav-card");
     
-    const audio = document.createElement("audio");
-    audio.src =allSongs[key].mp3;
-    audio.controls=true
-  
-    container.appendChild(img);
-    container.appendChild(name);
-    container.appendChild(info);
-    container.appendChild(audio);
-  
-    document.getElementById("fav-list").appendChild(container);
+      const img=document.createElement('img');
+      img.src=allSongs[key].image
+      img.classList.add("fav-img");
+    
+      const info=document.createElement('div');
+      info.style="margin:20px"
+
+      const name=document.createElement('p')
+      name.textContent=`Song Name -${allSongs[key].name}`
+      info.appendChild(name);
+
+      const singer=document.createElement('p')
+      singer.textContent=`Artist -${allSongs[key].info.singer}`
+      info.appendChild(singer);
+
+      const album=document.createElement('p')
+      album.textContent=`Album -${allSongs[key].info.album}`
+      info.appendChild(album);
+
+      const year=document.createElement('p')
+      year.textContent=`Year -${allSongs[key].info.year}`
+      info.appendChild(year);
+      
+      
+      const audio = document.createElement("audio");
+      audio.src =allSongs[key].mp3;
+      audio.controls=true
+      
+      container.appendChild(img);
+      console.log(info);
+      
+      container.appendChild(info);
+      container.appendChild(audio);
+    
+      document.getElementById("fav-list").appendChild(container);
+    } 
+}
+}
+else{
+  const none=document.createElement('li');
+  none.textContent="Song no present in favorites please like the song to add."
+
+  document.getElementById("fav-list").appendChild(none);
+
+}
+
+//for artist
+const artist=[
+  {
+    name:"name",
+    albums:[
+      {
+        name:"",
+        songs:[],
+      }
+    ]
+  }
+];
+class Artist{
+  constructor(name,song,album,year){
+    this.name=name;
+    this.song=song;
+    this.album=album;
+    this.year=year
+  }
+  addSong(){
+    for (const key in artist) {
+      
+    }
+
   }
 }
+allSongs.map((item,index)=>{
+
+})
+
+
+
       
 
 
