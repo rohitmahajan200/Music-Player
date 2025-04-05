@@ -108,13 +108,13 @@ for (const key in localStorage) {
     img.src=allSongs[key].image
     img.classList.add("fav-img");
   
-    const name=document.createElement('p');
-    name.appendChild(document.createTextNode(`Name-${allSongs[key].name}`));
+    const name=document.createElement('span');
+    name.appendChild(document.createTextNode(`Name-${allSongs[key].name}__`));
   
-    const info=document.createElement('p');
-    name.appendChild(document.createTextNode(`Artist-${allSongs[key].info.singer}`));
-    name.appendChild(document.createTextNode(`Album-${allSongs[key].info.album}`));
-    name.appendChild(document.createTextNode(`Year-${allSongs[key].info.year}`));
+    const info=document.createElement('span');
+    info.appendChild(document.createTextNode(`Artist-${allSongs[key].info.singer}__`));
+    info.appendChild(document.createTextNode(`Album-${allSongs[key].info.album}__`));
+    info.appendChild(document.createTextNode(`Year-${allSongs[key].info.year}`));
     
     const audio = document.createElement("audio");
     audio.src =allSongs[key].mp3;
